@@ -5,98 +5,131 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Roblox Creator Portfolio - Millionaire</title>
 <style>
-  /* System font stack for a clean modern look */
+  /* Modern, clean style with gray background and red accent */
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
-    line-height: 1.6;
+    background-color: #f5f5f7; /* Light gray background */
+    color: #222;
+    line-height: 1.65;
     scroll-behavior: smooth;
   }
   header {
-    background-color: #0071e3;
-    padding: 3rem 1.5rem;
+    background-color: #b71c1c; /* Deep red header */
+    padding: 3rem 1.5rem 2rem;
     text-align: center;
-    color: white;
-    border-bottom: 2px solid #005bb5;
+    color: #fff;
+    border-bottom: 3px solid #7f0000;
+    box-shadow: 0 4px 10px rgba(183, 28, 28, 0.4);
   }
   header h1 {
     margin: 0;
-    font-weight: 700;
-    font-size: 2.8rem;
-    letter-spacing: -0.02em;
+    font-weight: 800;
+    font-size: 3rem;
+    letter-spacing: -0.03em;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
   }
   header p {
-    margin-top: 0.4rem;
+    margin-top: 0.5rem;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    color: #ffdddd;
+    font-style: italic;
   }
   nav {
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
   }
   nav a {
     margin: 0 1rem;
-    color: #fff;
+    color: #ffd6d3;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.05rem;
-    padding-bottom: 2px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding-bottom: 3px;
     border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, color 0.3s ease;
   }
   nav a:hover,
   nav a:focus {
     border-bottom-color: #fff;
+    color: #fff;
     outline: none;
   }
   main {
     max-width: 960px;
     margin: 3rem auto 6rem;
-    padding: 0 1.25rem;
+    padding: 0 1.5rem;
   }
   section {
-    margin-bottom: 5rem;
+    margin-bottom: 6rem;
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards;
+    transform: translateY(25px);
+    animation: fadeInUp 0.9s ease forwards;
+    box-sizing: border-box;
   }
-  section:nth-of-type(1) { animation-delay: 0.3s; }
-  section:nth-of-type(2) { animation-delay: 0.6s; }
-  section:nth-of-type(3) { animation-delay: 0.9s; }
+  section:nth-of-type(1) { animation-delay: 0.25s; }
+  section:nth-of-type(2) { animation-delay: 0.55s; }
+  section:nth-of-type(3) { animation-delay: 0.85s; }
+  section:nth-of-type(4) { animation-delay: 1.15s; }
   h2 {
-    font-weight: 700;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #0071e3;
+    font-weight: 900;
+    font-size: 2.4rem;
+    margin-bottom: 1.8rem;
+    color: #b71c1c;
+    border-bottom: 3px solid #f44336;
+    padding-bottom: 0.6rem;
   }
-  /* About Section */
+  /* About Section with subtle gray background */
   #about {
     display: flex;
     align-items: center;
-    gap: 1.8rem;
+    gap: 2rem;
+    background-color: #eaeaec;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    color: #222;
+  }
+  #about a {
+    display: inline-block;
+    border-radius: 50%;
+    border: 3px solid #b71c1c;
+    box-shadow: 0 8px 30px rgba(183, 28, 28, 0.3);
+    transition: transform 0.3s ease;
+  }
+  #about a:hover, #about a:focus {
+    transform: scale(1.1);
+    outline: none;
+    box-shadow: 0 12px 40px rgba(183, 28, 28, 0.5);
   }
   #about img {
+    display: block;
     width: 160px;
     height: 160px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #0071e3;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  #about img:hover, #about img:focus {
-    transform: scale(1.05);
-    outline: none;
   }
   #about .about-content {
     flex-grow: 1;
   }
   #about p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-top: 0.8rem;
+  }
+  #about ul {
+    margin-top: 0.8rem;
+    margin-left: 1.5rem;
+    color: #444;
     font-size: 1rem;
-    color: #555;
-    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+  #about ul ul {
+    margin-top: 0.4rem;
+  }
+  #about strong {
+    color: #b71c1c;
   }
   /* Grid for games and groups */
   .grid {
@@ -108,35 +141,41 @@
     background-color: #fff;
     border-radius: 14px;
     padding: 1rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     text-decoration: none;
     color: #1d1d1f;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
     display: flex;
     flex-direction: column;
   }
   .card:hover,
   .card:focus {
-    background-color: #e6f7ff;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    background-color: #ffe6e6;
+    box-shadow: 0 12px 35px rgba(183, 28, 28, 0.3);
     outline: none;
-    transform: translateY(-6px);
+    transform: translateY(-8px);
   }
   .card img {
     width: 100%;
     border-radius: 12px;
     object-fit: cover;
     height: 160px;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.85rem;
     flex-shrink: 0;
+    transition: transform 0.4s ease;
+  }
+  .card:hover img,
+  .card:focus img {
+    transform: scale(1.05);
   }
   .card h3 {
-    font-weight: 600;
-    font-size: 1.15rem;
+    font-weight: 700;
+    font-size: 1.3rem;
     margin: 0 0 0.5rem 0;
+    color: #b71c1c;
   }
   .card p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #555;
     margin: 0;
     flex-grow: 1;
@@ -144,39 +183,43 @@
   /* Buttons */
   .btn {
     display: inline-block;
-    background-color: #0071e3;
+    background-color: #b71c1c;
     color: white;
     font-weight: 700;
-    font-size: 1.1rem;
-    padding: 0.75rem 2.5rem;
+    font-size: 1.2rem;
+    padding: 0.85rem 3rem;
     border: none;
-    border-radius: 38px;
+    border-radius: 42px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     text-decoration: none;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     user-select: none;
+    box-shadow: 0 8px 25px rgba(183, 28, 28, 0.5);
   }
   .btn:hover,
   .btn:focus {
-    background-color: #005bb5;
+    background-color: #7f0000;
+    box-shadow: 0 12px 40px rgba(127, 0, 0, 0.7);
     outline: none;
   }
   /* Contact Section */
   #contact p {
     font-size: 1rem;
-    color: #555;
-    line-height: 1.5;
+    color: #444;
+    line-height: 1.6;
   }
   #contact a {
-    color: #0071e3;
+    color: #b71c1c;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
+    transition: color 0.3s ease;
   }
   #contact a:hover,
   #contact a:focus {
     text-decoration: underline;
+    color: #7f0000;
     outline: none;
   }
   /* Footer */
@@ -184,24 +227,24 @@
     text-align: center;
     font-size: 0.9rem;
     color: #6e6e73;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem 4rem;
     border-top: 2px solid #d2d2d7;
     user-select: none;
   }
   /* Responsive */
-  @media (max-width: 600px) {
+  @media (max-width: 620px) {
     #about {
       flex-direction: column;
       text-align: center;
     }
-    #about img {
+    #about a {
       margin-bottom: 1rem;
     }
   }
   /* Animations */
   @keyframes fadeInUp {
     from {
-      transform: translateY(15px);
+      transform: translateY(25px);
       opacity: 0;
     }
     to {
@@ -225,31 +268,46 @@
 
 <main>
   <section id="about" tabindex="0" aria-label="About Millionaire">
-    <img src="IMAGE" alt="Profile photo of Millionaire" />
+    <a href="https://discord.com/users/1182203853215633498" target="_blank" rel="noopener noreferrer" aria-label="Visit Millionaire's Discord profile">
+      <img src="https://cdn.discordapp.com/avatars/1182203853215633498/a_4eced90579ab0afbc469bbaa0a75a79a.webp?size=128" alt="Profile photo of Millionaire" />
+    </a>
     <div class="about-content">
       <h2>About Millionaire</h2>
-      <p>TEXT</p>
-      <p>WHat he do</p>
+      <p>Hello! I’m <strong>Millionaire</strong>, a highly experienced Roblox project manager with over six years in game development and community leadership. At just 17 years old, I’ve guided multiple projects boasting wide success and large, engaged player bases.</p>
+      <p>Achievements include:</p>
+      <ul>
+        <li>Managing games with over 10,000 concurrent players</li>
+        <li>Generating more than 1 million Robux</li>
+        <li>Contributing to projects with over 30 million visits</li>
+      </ul>
+      <p>Some highlights of my contributions:</p>
+      <ul>
+        <li><strong>Owner & Co-owner Roles:</strong> Donation Empire, Royal Donations, Starving Vocalist, Pls Gift, Maybe Donations</li>
+        <li><strong>Contributor & Staff Roles:</strong> Donation Haven, France Donations, Melodia Productions, Poly Donations</li>
+        <li><strong>Management & Administrative Positions:</strong> Pls Money, Gold Donations, Blast-and-Survive, Blossom Donations</li>
+        <li><strong>Community Manager & Tester:</strong> Stitch Studios, Rate and Donate, Bubblx Studios, Mega Donations</li>
+      </ul>
+      <p><strong>Total Visits Contributed:</strong> 30,000,000+ across all projects</p>
     </div>
   </section>
 
   <section id="games" tabindex="0" aria-label="Millionaire's Games">
     <h2>Games</h2>
     <div class="grid">
-      <a class="card" href="https://www.roblox.com/games/1234567890/Adventure-Land" target="_blank" rel="noopener noreferrer" aria-label="game">
-        <img src="https://tr.rbxcdn.com/abcdef1234567890abcdef1234567890/768/432/Image/Png" alt="game" />
-        <h3>Game 1</h3>
-        <p>More..</p>
+      <a class="card" href="https://www.roblox.com/games/105795197211912/CHEAP-Poly-Donations" target="_blank" rel="noopener noreferrer" aria-label="Open game Adventure Land">
+        <img src="https://tr.rbxcdn.com/180DAY-9e7a632e1c8751baf70d26138edfba59/768/432/Image/Webp/noFilter" alt="Adventure Land game thumbnail" />
+        <h3>Donation Game [ STAFF ]</h3>
+        <p>a</p>
       </a>
-      <a class="card" href="https://www.roblox.com/games/0987654321/Fantasy-World" target="_blank" rel="noopener noreferrer" aria-label="game">
-        <img src="https://tr.rbxcdn.com/1234567890abcdef1234567890abcdef/768/432/Image/Png" alt="game" />
-        <h3>Game 2</h3>
-        <p>More..</p>
+      <a class="card" href="https://www.roblox.com/games/0987654321/Fantasy-World" target="_blank" rel="noopener noreferrer" aria-label="Open game Fantasy World">
+        <img src="https://tr.rbxcdn.com/1234567890abcdef1234567890abcdef/768/432/Image/Png" alt="Fantasy World game thumbnail" />
+        <h3>a</h3>
+        <p>a</p>
       </a>
-      <a class="card" href="https://www.roblox.com/games/1122334455/Survival-Island" target="_blank" rel="noopener noreferrer" aria-label="game">
-        <img src="https://tr.rbxcdn.com/abcdef0987654321abcdef0987654321/768/432/Image/Png" alt="game" />
-        <h3>Game 3</h3>
-        <p>More..</p>
+      <a class="card" href="https://www.roblox.com/games/1122334455/Survival-Island" target="_blank" rel="noopener noreferrer" aria-label="a">
+        <img src="https://tr.rbxcdn.com/abcdef0987654321abcdef0987654321/768/432/Image/Png" alt="a" />
+        <h3>Suaad</h3>
+        <p>a</p>
       </a>
     </div>
     <a href="https://www.roblox.com/users/1234567890/games" target="_blank" rel="noopener noreferrer" class="btn" aria-label="See all games by Millionaire on Roblox">See all my games</a>
@@ -258,18 +316,18 @@
   <section id="groups" tabindex="0" aria-label="Millionaire's Groups">
     <h2>Groups</h2>
     <div class="grid">
-      <a class="card" href="https://www.roblox.com/groups/1234567/Game-Developers" target="_blank" rel="noopener noreferrer" aria-label="gr">
+      <a class="card" href="https://www.roblox.com/groups/1234567/Game-Developers" target="_blank" rel="noopener noreferrer" aria-label="ae">
         <img src="https://tr.rbxcdn.com/1234567890abcdef1234567890abcdef/768/432/Image/Png" alt="a" />
-        <h3>Group 1</h3>
-        <p>A community of Roblox developers collaborating to create amazing games.</p>
+        <h3>Game Developers</h3>
+        <p>a</p>
       </a>
-      <a class="card" href="https://www.roblox.com/groups/7654321/Creative-Minds" target="_blank" rel="noopener noreferrer" aria-label="a">
-        <img src="https://tr.rbxcdn.com/abcdef1234567890abcdef1234567890/768/432/Image/Png" alt="a" />
-        <h3>Creative Minds</h3>
-        <p>A group for creative thinkers and builders to share ideas and projects.</p>
+      <a class="card" href="https://www.roblox.com/groups/1234567/Game-Developers" target="_blank" rel="noopener noreferrer" aria-label="ae">
+        <img src="https://tr.rbxcdn.com/1234567890abcdef1234567890abcdef/768/432/Image/Png" alt="a" />
+        <h3>Game Developers</h3>
+        <p>a</p>
       </a>
     </div>
-    <a href="https://www.roblox.com/users/1234567890/groups" target="_blank" rel="noopener noreferrer" class="btn" aria-label="See all groups of Millionaire on Roblox">See all my groups</a>
+    <a href="https://www.roblox.com/users/5080669445/communities" target="_blank" rel="noopener noreferrer" class="btn" aria-label="See all groups of Millionaire on Roblox">See all my groups</a>
   </section>
 
   <section id="contact" tabindex="0" aria-label="Contact Millionaire">
@@ -287,7 +345,7 @@
 </footer>
 
 <script>
-  // Smooth fade-in animations for sections handled with CSS, no JS needed here
+  // Sections fade-in is handled by CSS, no JS needed here.
 </script>
 </body>
 </html>
